@@ -10,22 +10,21 @@
   font-family: "Jomhuria", cursive;
 }
 
-/* Стилізація скролу */
 ::-webkit-scrollbar {
-  width: 8px; /* Ширина скролу */
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  border-radius: 10px; /* Закруглення */
+  border-radius: 10px;
 
-  background: rgba(255, 255, 255, 0.1); /* Колір фону треку */
+  background: rgba(255, 255, 255, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.5); /* Колір повзунка */
-  border-radius: 10px; /* Закруглення */
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.8); /* Колір повзунка при наведенні */
+  background: rgba(255, 255, 255, 0.8);
 }
