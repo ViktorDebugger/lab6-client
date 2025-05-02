@@ -28,7 +28,7 @@ const Register = () => {
 
     try {
       await register(email, password);
-      navigate("/profile"); // Перенаправляємо на сторінку профілю
+      navigate("/lab6-client/profile"); // Перенаправляємо на сторінку профілю
     } catch (error) {
       console.error("Registration error:", error);
     }
