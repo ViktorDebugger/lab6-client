@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-jua {
+  font-family: "Jua", sans-serif;
+}
+
+.font-jomhuria {
+  font-family: "Jomhuria", cursive;
+}
+
+/* Стилізація скролу */
+::-webkit-scrollbar {
+  width: 8px; /* Ширина скролу */
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px; /* Закруглення */
+
+  background: rgba(255, 255, 255, 0.1); /* Колір фону треку */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5); /* Колір повзунка */
+  border-radius: 10px; /* Закруглення */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.8); /* Колір повзунка при наведенні */
+}

@@ -1,0 +1,21 @@
+import { useAuth } from "../context/AuthProvider";
+
+const Home = () => {
+  const { user } = useAuth();
+  console.log("user: ", user);
+  return (
+    <main className="h-[87.5vh] flex justify-center items-center relative z-10">
+      <div className="font-jua text-center flex flex-col justify-center items-center text-white">
+        <h1 className="text-9xl">Adventure</h1>
+        <h3 className="text-4xl">Live Your Life</h3>
+        {!user && (
+          <a href="/register" className="rounded-full mt-8 bg-white px-20 py-2 font-jomhuria text-4xl text-black transition-colors duration-300 ease-in-out bg-opacity-100 hover:bg-opacity-50">
+            Register
+          </a>
+        )}
+      </div>
+    </main>
+  );
+};
+
+export default Home;
