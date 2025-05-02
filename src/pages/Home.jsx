@@ -2,7 +2,6 @@ import { useAuth } from "../context/AuthProvider";
 
 const Home = () => {
   const { user } = useAuth();
-  console.log("user: ", user);
   return (
     <main className="h-[87.5vh] flex justify-center items-center relative z-10">
       <div className="font-jua text-center flex flex-col justify-center items-center text-white">

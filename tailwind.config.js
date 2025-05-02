@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "custom-bg": "url('./src/assets/img/background.png')",
+        "custom-bg":
+          "url('https://res.cloudinary.com/dlistrvqm/image/upload/v1746179443/ueor5btzjatneca8npf4.png')",
       },
     },
   },
