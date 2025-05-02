@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await login(email, password);
-      navigate("/lab6-client/profile"); // Перенаправляємо на сторінку профілю
+      navigate("/profile"); // Перенаправляємо на сторінку профілю
     } catch (error) {
       console.error("Login error:", error);
     }

@@ -8,6 +8,8 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 
 function App() {
+
+
   return (
     <Router>
       <div className="relative bg-cover bg-center bg-no-repeat bg-custom-bg min-h-screen flex flex-col text-white">

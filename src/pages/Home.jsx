@@ -1,4 +1,5 @@
 import { useAuth } from "../context/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const { user } = useAuth();
@@ -8,9 +9,9 @@ const Home = () => {
         <h1 className="text-9xl">Adventure</h1>
         <h3 className="text-4xl">Live Your Life</h3>
         {!user && (
-          <a href="/lab6-client/register" className="rounded-full mt-8 bg-white px-20 py-2 font-jomhuria text-4xl text-black transition-colors duration-300 ease-in-out bg-opacity-100 hover:bg-opacity-50">
+          <Link to="/register" className="rounded-full mt-8 bg-white px-20 py-2 font-jomhuria text-4xl text-black transition-colors duration-300 ease-in-out bg-opacity-100 hover:bg-opacity-50">
             Register
-          </a>
+          </Link>
         )}
       </div>
     </main>

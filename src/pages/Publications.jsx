@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Publication from "../components/Publication.jsx";
 import SearchInput from "../components/SearchInput.jsx";
+import BASE_URL from "../db/baseUrl";
 
 const Publications = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -10,7 +11,7 @@ const Publications = () => {
   useEffect(() => {
     const fetchPublications = async () => {
       try {
-        const response = await fetch("http://localhost:3000/publications");
+        const response = await fetch(`${BASE_URL}/publications`);
         if (!response.ok) {
           throw new Error("Failed to fetch publications");
         }

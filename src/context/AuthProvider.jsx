@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import BASE_URL from "../db/baseUrl";
 
 const AuthContext = createContext();
 
@@ -16,7 +17,7 @@ export const AuthProvider = ({ children }) => {
       }
 
       try {
-        const response = await fetch("http://localhost:3000/api/user", {
+        const response = await fetch(`${BASE_URL}/api/user`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`, // Передаємо токен у заголовку
@@ -44,7 +45,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (email, password) => {
     try {
-      const response = await fetch("http://localhost:3000/api/signup", {
+      const response = await fetch(`${BASE_URL}/api/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -83,7 +84,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await fetch("http://localhost:3000/api/login", {
+      const response = await fetch(`${BASE_URL}/api/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -123,7 +124,7 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:3000/api/logout", {
+      const response = await fetch(`${BASE_URL}/api/logout`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`, // Передаємо токен у заголовку

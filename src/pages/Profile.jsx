@@ -7,6 +7,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { uploadImageToCloudinary } from "../db/cloudinary.js";
 import { useAuth } from "../context/AuthProvider.jsx";
+import BASE_URL from "../db/baseUrl";
 
 const Profile = () => {
   const { user } = useAuth();
@@ -68,7 +69,7 @@ const Profile = () => {
         userId: user.uid,
       };
 
-      const response = await fetch("http://localhost:3000/publications", {
+      const response = await fetch(`${BASE_URL}/publications`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -175,7 +176,7 @@ const Profile = () => {
     const fetchPublications = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/publications/user?userId=${user.uid}`
+          `${BASE_URL}/publications/user?userId=${user.uid}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch publications");

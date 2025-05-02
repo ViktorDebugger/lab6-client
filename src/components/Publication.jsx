@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import CommentsList from "./CommentsList";
 import { useAuth } from "../context/AuthProvider";
 import { toast } from "react-toastify";
+import BASE_URL from "../db/baseUrl";
 
 const Publication = ({ publication }) => {
   const { user } = useAuth();
@@ -17,7 +18,7 @@ const Publication = ({ publication }) => {
       try {
         // Отримати кількість лайків
         const response = await fetch(
-          `http://localhost:3000/publications/${publication.id}/likes/count`
+          `${BASE_URL}/publications/${publication.id}/likes/count`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch likes count");
@@ -28,7 +29,7 @@ const Publication = ({ publication }) => {
         // Перевірити, чи користувач лайкнув публікацію
         if (user) {
           const userLikedResponse = await fetch(
-            `http://localhost:3000/publications/${publication.id}/likes/${user.uid}`
+            `${BASE_URL}/publications/${publication.id}/likes/${user.uid}`
           );
           if (!userLikedResponse.ok) {
             throw new Error("Failed to check if user liked the publication");
@@ -61,7 +62,7 @@ const Publication = ({ publication }) => {
       if (liked) {
         // Видалити лайк
         const response = await fetch(
-          `http://localhost:3000/publications/${publication.id}/likes/${user.uid}`,
+          `${BASE_URL}/publications/${publication.id}/likes/${user.uid}`,
           { method: "DELETE" }
         );
         if (!response.ok) {
@@ -72,7 +73,7 @@ const Publication = ({ publication }) => {
       } else {
         // Додати лайк
         const response = await fetch(
-          `http://localhost:3000/publications/${publication.id}/likes`,
+          `${BASE_URL}/publications/${publication.id}/likes`,
           {
             method: "POST",
             headers: {
