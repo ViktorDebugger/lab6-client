@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../context/AuthProvider"; // Імпортуємо контекст автентифікації
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import BASE_URL from "../db/baseUrl";
 
 const CommentForm = ({ publicationId, onCommentAdded }) => {
   const { user } = useAuth();
@@ -30,7 +31,7 @@ const CommentForm = ({ publicationId, onCommentAdded }) => {
       };
 
       const response = await fetch(
-        `http://localhost:3000/publications/${publicationId}/comments`,
+        `${BASE_URL}/publications/${publicationId}/comments`,
         {
           method: "POST",
           headers: {

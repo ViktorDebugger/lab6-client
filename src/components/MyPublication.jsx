@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faClose } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-toastify";
+import BASE_URL from "../db/baseUrl";
 
 import { uploadImageToCloudinary } from "../db/cloudinary.js";
 
@@ -59,7 +60,7 @@ const MyPublication = ({ publication, onDelete, onUpdate }) => {
         updatedAt: new Date().toISOString(),
       };
 
-      const response = await fetch(`http://localhost:3000/publications/${publication.id}`, {
+      const response = await fetch(`${BASE_URL}/publications/${publication.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -96,7 +97,7 @@ const MyPublication = ({ publication, onDelete, onUpdate }) => {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/publications/${publication.id}`, {
+      const response = await fetch(`${BASE_URL}/publications/${publication.id}`, {
         method: "DELETE",
       });
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CommentForm from "./CommentForm";
+import BASE_URL from "../db/baseUrl";
 
 const CommentsList = ({ publicationId }) => {
   const [comments, setComments] = useState([]);
@@ -9,7 +10,7 @@ const CommentsList = ({ publicationId }) => {
     const fetchComments = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/publications/${publicationId}/comments`
+          `${BASE_URL}/publications/${publicationId}/comments`
         );
 
         if (!response.ok) {
